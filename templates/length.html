@@ -1,0 +1,36 @@
+<!-- templates/length.html -->
+{% extends "base.html" %}
+{% block content %}
+<h2>Length Conversion</h2>
+<form method="POST" target="_self">
+  <input type="number" name="value" step="any" required placeholder="Enter value">
+
+  <select name="from_unit" required>
+    <option value="millimeter">Millimeter</option>
+    <option value="centimeter">Centimeter</option>
+    <option value="meter">Meter</option>
+    <option value="kilometer">Kilometer</option>
+    <option value="inch">Inch</option>
+    <option value="foot">Foot</option>
+    <option value="yard">Yard</option>
+    <option value="mile">Mile</option>
+  </select>
+
+  <select name="to_unit" required>
+    <option value="millimeter">Millimeter</option>
+    <option value="centimeter">Centimeter</option>
+    <option value="meter">Meter</option>
+    <option value="kilometer">Kilometer</option>
+    <option value="inch">Inch</option>
+    <option value="foot">Foot</option>
+    <option value="yard">Yard</option>
+    <option value="mile">Mile</option>
+  </select>
+
+  <input type="submit" value="Convert">
+</form>
+
+{% if result is not none %}
+<p>Converted Result: {{ result }}</p>
+{% endif %}
+{% endblock %}

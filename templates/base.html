@@ -1,0 +1,40 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unit Converter</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 20px;
+          text-align: center;
+      }
+      .nav {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          margin-bottom: 20px;
+      }
+      .nav a {
+          text-decoration: none;
+          padding: 10px;
+          background-color: #f0f0f0;
+          border-radius: 5px;
+      }
+  </style>
+</head>
+<body>
+<h1>Unit Converter</h1>
+<div class="nav">
+  <a href="{{ url_for('length_conversion') }}">Length Conversion</a>
+  <a href="{{ url_for('weight_conversion') }}">Weight Conversion</a>
+  <a href="{{ url_for('temperature_conversion') }}">Temperature Conversion</a>
+</div>
+{% block content %}
+<p>Select a conversion type from the menu above.</p>
+{% endblock %}
+</body>
+</html>
